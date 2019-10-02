@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>real</title>
+
+
+<script src="https://use.typekit.net/dcf1ame.js"></script>
+ <script>try{Typekit.load({ async: true });}catch(e){}</script>
+ <script src="https://www.w3schools.com/lib/w3.js"></script>
+
+
+<style>
+/*html{cursor: url(cursor.png), auto;}*/
+html{ scroll-behavior: smooth; cursor: url(./img/cursor.png) 12 12, auto; overflow: hidden;}
+
+a{cursor: url(./img/cursor2.png) 12 12, auto;}
+
+a{color: #042830;}
+a:link {text-decoration: none;}
+a:hover{text-decoration: underline;
+        text-decoration-style: wavy;}
+body {background-color: white; height: 1080px; width: 1920px;}
+
+::selection {background: #54afd3; color: white;}
+
+.darkgreen {background-color: green; color: white;}
+/*<mark class="darkgreen"> </mark>*/
+
+::underline {color: white;}
+
+* {margin: 0; padding: 0; }
+
+#footer {width: 101%; height: 9%; color: white; background: #042830; position: absolute; bottom: 0%; left:-1%; z-index: 998; transition: all 1.5s; border: 2px solid #042830; opacity: 0; visibility: hidden;
+  border-top-style: solid;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;}
+
+#topbtn {width: 50px; height: 50px; position: absolute; right: -40%; bottom: -17%; z-index: 350; border-radius: 50%; background:#042830;}
+#topbtn img {width: 70%; transform: rotateZ(180deg); margin-left: 15%; margin-top: 20%; z-index: 350;}
+#topbtn:hover {-webkit-filter: drop-shadow(2px 2px 6px #666); background:#f0453d;transition: all 1.5s;}
+
+/* 하단 우측 화살표 */
+
+@import "compass/css3";
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform:translateY(0);
+  }
+  40% {
+    transform:translateY(-25px);
+  }
+  60% {
+    transform:translateY(-10px);
+  }
+}
+
+#arrow2 {
+  position: absolute; top: 47.5%; right: 0%; 
+  transform: rotateZ(90deg); width: 3%; 
+  transition: all 3s ease-out; 
+  transition-duration: 0.5s; 
+  opacity: 0; visibility: hidden; 
+}
+
+#arrow {position: absolute; bottom: 3%; left: 48%; width: 2%;background-size: contain; z-index: 999; animation: bounce 2.5s;
+animation-iteration-count: infinite;}
+#arrow img {width: 90%;}
+#arrow img:hover {-webkit-filter: drop-shadow(2px 2px 6px #666);opacity: 0.3;}
+.arrow:hover {opacity: 0.3; background: white;}
+
+
+
+/*사용설명서*/
+#instruc {width: 82%; height: 100%; background-color: white; position: absolute; overflow: hidden; scroll-behavior: smooth;  z-index: 200; margin-top: 71.2%; display: none;}
+/*instruction*/
+#section1 {width: 90%; height: 90%; color: #042830; margin-bottom: 10%; margin-left: 5%; z-index: 400;}
+#section2 {width: 90%; height: 90%;  color: #042830; margin-bottom: 10%; margin-left: 5%;}
+#section3 {width: 90%; height: 90%; color: #042830; margin-bottom: 10%; margin-left: 5%;}
+
+#section4 {width: 100%; height: 100%;}
+#section5 {width: 100%; height: 100%; background:white ;}
+
+#section6 {width: 100%; height: 100%; background: black;}
+#section7 {width: 100%; height: 100%; background: grey ;}
+
+section {height: 90%; width: 90%; display: flex; flex-direction: column; /*justify-content: center;*/}
+#section1 {color: #fff;}
+#section1 a{color: #042830;}
+#section2 a{color: #042830;}
+#section3 a{color: #042830;}
+#section4 {background:#042830; animation: logo 2s;}
+@keyframes logo {
+  0% {
+    background: white;
+  }
+  
+  100%{
+    background:#042830;
+  }
+
+}
+
+
+
+#textbox {width: 100%; margin-top: 3%;}
+#textbox2 {width: 100%; margin-top: 5%; margin-left: 2%; position: absolute;}
+
+p,h1,h2,h3 {font-family: "source-han-serif-korean",serif; text-decoration: none;}
+
+h1 {font-size: 1.4em; font-weight: 600; line-height: 1.4; text-align: center;}
+h2 {font-size: 2em; font-weight: 700; text-align: center;}
+    h2:hover {text-decoration: none;}
+h3 {font-size: 2.2em; font-weight: 500; text-align: left; line-height: 1.9; filter: blur(4px);}
+    h3:hover {filter: blur(0px);}
+
+#gradient {
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    height:50px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0089fff1', endColorstr='#000000',GradientType=0 ); /* IE6-9 */}
+
+#logo {width: 40%; position: absolute; top: 37%; left: 30%; z-index: 500; visibility: visible; transition: all 0.5s; opacity: 1; animation: first 8s; opacity: 1; animation-iteration-count: 1; -webkit-filter: drop-shadow(25px 25px 35px #54afd3);}
+#logo:hover {-webkit-filter: drop-shadow(10px 10px 1px #f0453d); }
+#smalllogo {width: 20%; position: absolute; top: 12%; left: 40%; z-index: 500; visibility: hidden; transition: all 1s; opacity: 0;}
+#smalllogo:hover {-webkit-filter: drop-shadow(2px 2px 4px #111); }
+
+@keyframes first {
+  0% {
+    opacity: 0;
+  }
+  
+  100%{
+    opacity: 1;
+  }
+
+}
+
+
+
+#one {width: 100%; height: 100%; overflow: hidden; scroll-behavior: smooth; }
+
+
+//메뉴
+
+#file h1{font-size: 1.2em; font-weight: 300; line-height: 1.4; color: #042830; width: 90%; height: 30%; margin-left: 5%; margin-top: -10%; text-align: center;}
+
+#arrowbox {width: 50%; height: 21%; position: relative; margin-left: 25%;  margin-top: 32%;}
+
+#fileName {width: 90%; height: 30%; margin-left: 5%; margin-top:-40%;} 
+
+
+
+/*알고리즘 파일 선택 영역*/
+#algofile {width: 13%; height: 92%; float: left;}
+#algofile:hover {background:#54afd3; transition: all 0.5s;-webkit-filter: drop-shadow(0px 0px 4px #888);}
+
+/*불편 접수 페이지 선택영역*/
+#regisfile {width: 13%; height: 92%; float: left;}
+#regisfile:hover {background:#54afd3; transition: all 0.5s; -webkit-filter: drop-shadow(0px 0px 4px #888);}
+
+/*불편 리스트 선택 영역*/
+#listfile {width: 13%; height: 92%; float: left;}
+#listfile:hover {background: #54afd3; transition: all 0.5s; -webkit-filter: drop-shadow(0px 0px 4px #888);}
+
+#fileimg {width: 90%; text-align: center; opacity: 1; margin-left: 5%;}
+
+/*algorithm page*/
+#algorithm {width: 94%; height: 70%; overflow: hidden; 
+  background: grey; scroll-behavior: smooth; position: absolute; left:3%; bottom: 10%; visibility: hidden; opacity: 0;}
+
+
+span:hover {color: #042830; background:#f0453d;}
+
+</style>
+</head>
+
+<body>
+
+  <div id="arrow">
+    <a href="#section5" title="scroll down">
+    <img src="./img/show.png" style="z-index:5;">
+</div>
+
+
+
+    <div id="one">
+        <section id="section4" style="background-color: #042830;">
+          <img src="./img/logo.png" id="logo" > 
+        </section>
+
+        <section id="section5">
+            <img src="./img/logo2.png" id="smalllogo">
+
+            <div style="position: absolute;"></div>
+          <div id="arrowbox"> 
+
+            <div id="regisfile" style="margin-right: 16%; ">
+              <a href="instruc.html">
+                <img src="./img/file1.png" id="fileimg"> 
+              
+                <h1>웹사이트<br>설명서</h1>
+              </a>
+            </div>
+            
+            <div id="algofile" style="margin-right: 16%;">
+              <a href="#section6" title="당신을 위한 불편 알고리즘을 시작해보세요!">
+                <img src="./img/file2.png" id="fileimg">
+                <h1>불편<br>알고리즘</h1>
+                </a>
+            </div>
+
+            <div id="regisfile" style="margin-right: 16%;">
+              <a href="#" title="당신의 해결불가한 고민을 접수해주세요!"></a>
+              <img src="./img/file3.png" id="fileimg">
+              <h1>불편<br>접수창구</h1>
+            </div>
+
+            <div id="listfile" style=" height: 85%;">
+              <a href="menu.html" title="이미 제품으로 제작된 고민들이 궁금하신가요?">
+                <img src="./img/file4.png" id="fileimg"></a>
+                <h1>온갖 불편</h1>
+            </div>
+
+            <div id="topbtn">
+              <a href="index.html" title="go up"><img src="./img/show.png"></a>
+            </div>
+
+            </div>
+
+            <div id="footer" style="position: fixed; ">
+              <h1 style="text-align: left; margin-top: 0.7%; margin-left: 2%; float: left; width: 20%; height:15%; text-align: 1.7; color: white;"><span>2019 HKNU DESIGN<br>졸업작품전시회 한경대로</span></h1>
+                <h1 style="text-align: center; margin-top: 0.8%; margin-left: 17%; float: left; width: 20%; height:15%; text-align: 1.9; color: white;"><span>당신의 현실과 비현실을<br>위한 고민해소 전용 웹사이트</span></h1>
+                <h1 style="text-align: right; margin-top: 0.7%; margin-right: 2%; float: right; width: 20%; height:15%; text-align: 1.7; color: white;"><span>© Made by KSR</span><br><span>@0__197</span></h1>
+          </div>
+        </section>
+
+      </div>
+
+
+  <script type="text/javascript">
+
+var toggle = "off";
+        arrow.onclick = function(){
+            if(toggle == "off"){
+              toggle = "on";
+              logo.style.visibility = "hidden";
+              logo.style.top = "-50px";
+              smalllogo.style.opacity = "0";
+              smalllogo.style.visibility = "visible";
+              smalllogo.style.opacity = "1";
+              smalllogo.style.top = "75px";
+              arrow.style.display="none";
+              footer.style.visibility = "visible";
+              footer.style.opacity = "1";
+            } 
+      }
+
+
+
+      instruc.onclick = function(){
+            if(toggle == "off"){
+              toggle = "on";
+              instruc.style.display = "inline";
+              instruc.style.zIndex = "+700";    
+            } 
+      }
+
+      algofile.onclick = function(){
+            if(toggle == "off"){
+              toggle = "on";
+              algorithm.style.visibility = "visible";
+              algorithm.style.opacity = "1";
+              instruc.style.visibility = "visible";
+              instruc.style.opacity = "1";
+            } 
+      }
+
+
+
+
+  </script>
+  <script type="text/javascript">
+    $('a[href*=\\#]').on('click', function(event){     
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+    });
+
+    // Smooth scrolling when the document is loaded and ready
+    $(document).ready(function(){
+      $('html,body').animate({scrollTop:$(location.hash).offset().‌​top}, 500);
+    });
+        /*else if (toggle = "on") {
+              toggle ="off";
+              arrow2.style.display = "inline";
+              arrow2.style.right = "100%";
+              arrow2.style.transition = "all 0.2s";
+              arrow2.style.opacity = "0";
+              arrow2.style.visibility = "hidden";
+            }
+
+
+            /*algofile.onclick = function(){
+            if(toggle == "off"){
+              toggle = "on";
+              algorithm.style.visibility = "visible";
+              textbox2.style.visibility = "visible";
+              textbox.style.visibility = "visible";
+            } 
+      }
+
+
+
+
+  </script>
+  <script type="text/javascript">
+    $('a[href*=\\#]').on('click', function(event){     
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+    });
+
+    // Smooth scrolling when the document is loaded and ready
+    $(document).ready(function(){
+      $('html,body').animate({scrollTop:$(location.hash).offset().‌​top}, 500);
+    });
+        /*else if (toggle = "on") {
+              toggle ="off";
+              arrow2.style.display = "inline";
+              arrow2.style.right = "100%";
+              arrow2.style.transition = "all 0.2s";
+              arrow2.style.opacity = "0";
+              arrow2.style.visibility = "hidden";
+            }
+
+
+            <div id="algorithm">
+
+      <section id="section6">
+        <div id="textbox" >
+          <a href="index.html">
+          <h2 style="color: black;">웹사이트 설명서</h2>
+          </a>
+        </div>
+
+        <div id="textbox2" style="width: 57%; margin-top: 15%;">
+          <a class="textbox2" href="#section7" title="Scroll Down">
+          <h3 style="color: black; text-decoration: none; -webkit-text-stroke: 1.3px #042830;">1.<br><br>
+            현실(現實) : [현실]<br>
+            명사. 현재 실제로 존재하는 사실이나 상태.<br><br>
+            비현실(非現實) : [비ː현실]<br>
+            명사. 현재 실제로 존재하는 일이나 상태가 아닌 것.</h3>
+        
+        </div>
+      </section>
+      <section id="section7">
+        <div id="textbox" >
+          <a href="index.html">
+          <h2 style="color: black;">웹사이트 설명서</h2>
+          </a>
+        </div>
+
+        <div id="textbox2" style="width: 57%; margin-top: 15%;">
+          <a class="textbox2" href="#section7" title="Scroll Down">
+          <h3 style="color: black; text-decoration: none; -webkit-text-stroke: 1.3px #042830;">1.<br><br>
+            현실(現實) : [현실]<br>
+            명사. 현재 실제로 존재하는 사실이나 상태.<br><br>
+            비현실(非現實) : [비ː현실]<br>
+            명사. 현재 실제로 존재하는 일이나 상태가 아닌 것.</h3>
+        
+        </div>
+      </section>
+
+    </div>*/*/
+  </script>
+
+  
+</body>
+</html>

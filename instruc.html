@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>algorythm</title>
+
+<link rel="stylesheet" type="text/css" href="normalize.css">
+<script src="https://use.typekit.net/dcf1ame.js"></script> <script>try{Typekit.load({ async: true });}catch(e){}</script>
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+<style>
+html{scroll-behavior: smooth; overflow: hidden; }
+
+a{cursor: url(./img/cursor2.png) 12 12, auto;}
+
+::selection {background: #54afd3; color: white;}
+span:hover {color: white; background:#54afd3;-webkit-text-stroke: 0px #042830; text-decoration: none; font-weight: 600;}
+span .darkblue {color: #042830;}
+
+a{color: #54afd3;}
+a:link {text-decoration: none;}
+a:hover{text-decoration: underline;
+        text-decoration-style: wavy;}
+
+
+.underline {border: 1px; margin-top: 5%;}
+
+*,*::before,*::after {box-sizing: border-box;}
+body {font: Poppins, BlinkMacSystemFont, "-apple-system", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;  text-align: center;
+  margin:0; width: 100%; height: 100%; 
+  background:url('./img/start.png'); 
+  background-size: 100% 100%;}
+
+/*footer*/
+#footer {width: 100%; height: 9%; background: #042830; position: absolute; bottom: 0%; margin-top: 8%; z-index: 998; transition: all 1.5s; border: 2px solid #042830; 
+  border-top-style: solid;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;}
+
+/*top button*/
+#topbtn {width: 50px; height: 50px; position: fixed; right: 1%; bottom: 10%; z-index: 350; border-radius: 50%; background:#042830;}
+#topbtn img {width: 70%; transform: rotateZ(180deg); margin-left: 2%; margin-top: 20%; z-index: 350;}
+#topbtn:hover {-webkit-filter: drop-shadow(2px 2px 6px #666); background:#f0453d;transition: all 1.5s;}
+
+
+
+#allins {width: 100%; height: 100%; background: lightgrey;}
+
+section {height: 100%; width: 100%; display:flex; background: white; flex-direction:  column;/*justify-content: center;*/}
+#section1 {color: #fff;}
+
+
+#section4 {color: #000; position: relative;}
+
+
+#mousesroll {width: 20%; text-align: center; height: 100%;  }
+#mousesroll:hover {filter: blur(1px);}
+
+#textbox {width: 100%; margin-top: 3%;}
+#textbox2 {width: 90%; margin-top: 4%; margin-left: 10%; margin-bottom: 10%;}
+#textbox3 {width: 90%; margin-top: 3%; margin-left: 10%; margin-bottom: 10%;}
+
+#textbox4 {width: 20%; margin-left: 30%; margin-top: 7%;}
+
+#textbox5 {width: 100%; margin-left: -10%;}
+#textbox6 {width: 10%; margin-top: 2%; }
+
+#textbox7 {width: 25%; margin-top: -3%;}/*수정사항*/
+
+#arrow {width: 10%; margin-top: 14.5%; float: left;}
+#arrow2 {width: 10%; margin-top: 14.5%; float: left;}
+#arrow3 {width: 10%; margin-top: 14.5%; float: left;}
+
+#logo {width: 100%; text-align: center; margin-left: 50%;}
+
+#texthover:hover {color: #042830; }
+
+.mouseDown {
+  font-size: 2em; 
+  border: 3px solid rgba(43,43,43,1);
+  display: block;
+  width: 1.6em;
+  height: 2.5em;
+  border-radius: 0.8em;
+  margin: 0 auto;
+  text-decoration: none;
+  transition: border 0.2s ease-out;
+  filter: blur(2.5px);
+}
+
+.mouseDown:hover {border: 4px solid rgba(0,0,0,0.7); filter: blur(0px);}
+
+.mouseDown span {
+  display: block;
+  background: #2b2b2b;
+  width: 0.2em;
+  height: 0.5em;
+  margin: 0.7em auto 0;
+  border-radius: 0.4em;
+}
+
+.mouseDown span {
+  animation-name: scroll;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.65, -0.55, 0.25, 1.5);
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.mouseDown:hover span {
+  animation-duration: 1.8s; filter: blur(0px);
+}
+
+#mousescroll {width: 5%; height: 10%; position: fixed; right: 0.5%; bottom: 14%; z-index: 999;}
+
+
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 1;
+  }
+  20%{
+    transform: translateY(0) scaleY(1);
+  }
+  100% {
+    transform: translateY(1.2em) scaleY(0.8);
+    opacity: 0.01;
+  }
+}
+
+ /*p.typing-txt{display: none; position: absolute;}
+
+    .typing {  
+      position: absolute;
+      display: block; 
+      animation: cursor 7s ease-in-out forwards;
+    } 
+    @keyframes cursor{ 
+      0%{border-right: 1px solid #fff} 
+      50%{border-right: 1px solid #000} 
+      100%{border-right: 1px solid #fff} 
+    }
+
+    #name2 {width: 30px; height: 100px; position: absolute; background: white; opacity: 0; animation: slide_ 1.2s forwards}*/
+
+
+
+
+p,h1,h2,h3,h4,h5,h6,h9 {font-family: "source-han-serif-korean",serif; text-decoration: none;}
+
+    h1 {font-size: 1.4em; font-weight: 600; line-height: 1.4; color: #042830; text-align: center;}
+    h2 {font-size: 2.2em; font-weight: 700; text-align: center;}
+    h2:hover {text-decoration: none;}
+    h3 {font-size: 2.2em; font-weight: 500; text-align: left; line-height: 1.9; filter: blur(4px);}
+    h3:hover {filter: blur(0px);}
+    
+    h5 {font-size: 25px; font-weight: 300; text-align: center; line-height: 1.9;} /*문제*/
+    h6 {font-size: 25px; font-weight: 200; text-align: center; line-height: 1.9; filter: blur(2px);}
+    h6:hover {filter: blur(0px);} /*답변*/
+
+    h9 {font-size: 32px; font-weight: 600; text-align: left; line-height: 0; color: white; text-decoration: none; -webkit-text-stroke: 1.8px #042830;}
+    h9:hover {font-weight: 600; line-height: 0; color: #042830;}
+
+
+    /*메뉴*/
+    #menu {position:relative; width:60%; margin-top: 2.5%; margin-left: 2%;}
+
+a{cursor: url(./img/cursor2.png) 12 12, auto;}
+::selection {background: #54afd3; color: white;}
+
+/*메뉴바*/
+.navbar {
+  overflow: hidden;
+  font-family: source-han-serif-korean, serif;
+  width:50%; margin-top: -5%;  
+}
+
+.navbar a {
+  float: left;
+  color:#042830;
+  text-decoration:underline;
+  padding: 0px 10px;
+  text-decoration: none;
+  margin-left:4%;
+  border: 2px solid #042830;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  border: 2px solid #042830;
+  margin-left:4%;
+}
+
+.dropdown2 {
+  float: left;
+  overflow: hidden;
+  border: 2px solid grey;
+  margin-left:4%;
+}
+
+.dropdown .dropbtn {
+  cursor: url(./img/cursor2.png) 12 12, auto;  
+  border: none;
+  outline: none;
+  color: #042830;;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+ .navbar a:hover {
+  background: #042830 ;
+  color: white;
+  filter:blur(1px);
+}
+
+ .dropdown:hover .dropbtn, .dropbtn:focus{
+  background: #042830 ;
+  color: white;
+  filter: blur(1px);
+  
+}
+
+.dropdown-content {
+  float: left;
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 160px;
+  box-shadow: 0px 4px 20px -3px rgba(0,0,0,0.1);
+  z-index: 1;
+  border: 2px solid #042830;
+}
+
+
+
+.dropdown-content a {
+  float: left;
+  color: white;
+  padding: 4.5% 5px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  border: 0px none;
+  -webkit-text-stroke: 0.5px #042830;
+}
+
+.dropdown-content a:hover {
+  background: #54afd3 ;
+  color: #042830;
+  -webkit-text-stroke: 0.4px #042830;
+}
+
+.show {
+  display: block;
+}
+
+.show2 {
+  display: block;
+}
+#tri{width:3%; height:3%; float:left;}
+
+
+/*<div id="name2" style="width: "></div>
+
+    <h2 class="typing-txt" style="height: 400px;"> 현실(現實) : [현실] <br> 명사. 현재 실제로 존재하는 사실이나 상태.</h2>
+    <p class="typing" style="left:1200px; top: 40px;"></p>
+
+    <script> 
+      var typingBool = false; 
+      var typingIdx=0; 
+      var typingTxt = $(".typing-txt").text(); 
+      typingTxt=typingTxt.split("");  
+      if(typingBool==false){  
+         typingBool=true; 
+         
+         var tyInt = setInterval(typing,100); 
+       } 
+       
+       function typing(){ 
+         if(typingIdx<typingTxt.length){ 
+           $(".typing").append(typingTxt[typingIdx]); 
+           typingIdx++; 
+         } else{ 
+           clearInterval(tyInt); 
+         } 
+       }   
+    </script> 
+</style>
+</head>
+
+<body>
+
+    <div id="footer" style="position: fixed; ">
+        <h1 style="text-align: left; margin-top: 0.7%; margin-left: 2%; float: left; width: 20%; height:15%; text-align: 1.7; color: white;"><span>2019 HKNU DESIGN<br>졸업작품전시회 한경대로</span></h1>
+        <h1 style="text-align: center; margin-top: 0.7%; margin-left: 17%; float: left; width: 20%; height:15%; text-align: 1.9; color: white;"><span>당신의 현실과 비현실을<br>위한 고민해소 전용 웹사이트</span></h1>
+        <h1 style="text-align: right; margin-top: 0.7%; margin-right: 2%; float: right; width: 20%; height:15%; text-align: 1.7; color: white;"><span>© Made by KSR</span><br><span>@0__197</span></h1>
+    </div>
+
+
+    <div id="topbtn">
+      <a href="#section" title="go up"><img src="./img/show.png"></a>
+    </div>
+
+    <div id="topbtn" style="top: 8%; left: 2%;">
+      <a href="index.html" title="go back"><img src="./img/show.png" style="transform: rotateZ(90deg); margin-top: 22%; margin-left: -10%;"></a>
+    </div>
+
+    <section id="section">  
+      <div id="textbox" >
+        <h2 style="color: #042830; ">웹사이트 설명서</h2>
+      </div>
+
+      <div id="textbox2" style="width: 57%;">
+        <a class="textbox2" href="#section1" title="Scroll Down">
+        <h3 style="color: white; text-decoration: none; -webkit-text-stroke: 1.3px #042830;">1.<br><br>
+          <span>현실(現實) : [현실]</span><br>
+          명사. 현재 실제로 존재하는 사실이나 상태.<br><br>
+          <span>비현실(非現實) : [비ː현실]</span><br>
+          명사. 현재 실제로 존재하는 일이나 상태가 아닌 것.</h3>
+      
+      </div>
+    </section>
+
+    <section id="section1" style="height: 100%;">
+
+      <div id="textbox" style="margin-top: 5%;">
+        <h2 style="color: #042830;">웹사이트 설명서</h2>
+      </div>
+
+      <div id="textbox2" style="width: 51%; height: 100%;"> 
+        <a class="textbox2" href="#section2" title="Scroll Down">
+        <h3 style="color: white; text-decoration: none; -webkit-text-stroke: 1.3px #042830;">2.<br><br>현실비현실 : <br><br><span>현실의 해ː결불가한 고민</span>을 <br><span>비ː현실적으로 해ː소</span>시키는 웹사이트 서비스.
+      </h3>
+      </div>
+    </section>
+
+    <section id="section2" >
+      <div id="textbox" >
+        <h2 style="color: #042830;">웹사이트 설명서</h2>
+      </div>
+
+      <div id="textbox3" style="width: 80%; height: 120%;"> <a class="textbox3" href="#section4" title="Scroll Down">
+        <h3 style="color: white; text-decoration: none; -webkit-text-stroke: 1.3px #042830;">3.<br><br>저희 웹사이트에서는 당신 일상의 고민을 <span>접수</span>받으며 <br>비현실적인 <span>해소방법</span>을 제공하는 사이트입니다.<br><br><b><span>현실에서는 해결할 수 없는 고민과 스트레스를 이 웹사이트에 접수해주세요.</span></b><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </h3>
+      </div>
+    </section>
+</div>
+  
+
+  <script type="text/javascript">
+    
+    var toggle = "off";
+
+        textbox3.onclick = function(){
+            if(toggle == "off"){
+              toggle = "on";
+        document.section4.style.background = "black";
+            } 
+        }
+
+  </script>
+
+  
+</body>
+</html>

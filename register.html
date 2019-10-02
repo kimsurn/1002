@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>register</title>
+
+<link rel="stylesheet" type="text/css" href="normalize.css">
+<script src="https://use.typekit.net/dcf1ame.js"></script>
+ <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    
+<style>
+html{ }
+a:link {text-decoration: none;}
+a:hover{text-decoration: underline;
+        text-decoration-style: wavy;}
+
+.underline {border: 1px; margin-top: 5%;}
+
+*,*::before,*::after {box-sizing: border-box;}
+body {font: Poppins, BlinkMacSystemFont, "-apple-system", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;  text-align: center;
+  margin:0; width: 100%; height: 100%; 
+  background:url('./img/start.png'); 
+  background-size: 100% 100%;}
+
+section {height: 1088px; width: 100%; display:flex; flex-direction: column;/*justify-content: center;*/}
+#section1 {color: #fff;}
+#section1 a{color: #000;}
+#section2 a{color: #000;}
+#section3 a{color: #000;}
+
+#section4 {color: #000; position: relative;}
+#section4 a{color: #000;}
+
+#section5 a{color: #000;}
+
+#section6 a{color: #000;}
+
+#mousesroll {width: 20%; text-align: center; height: 100%;}
+#mousesroll:hover {filter: blur(1px);}
+
+#textbox {width: 100%; margin-top: 3%;}
+#textbox2 {width: 90%; margin-top: 1%; margin-left: 10%;}
+#textbox3 {width: 90%; margin-top: 1%; margin-left: 10%;}
+
+#textbox4 {width: 20%; margin-left: 30%; margin-top: 7%;}
+
+#textbox5 {width: 100%; margin-left: -10%;}
+#textbox6 {width: 10%; margin-top: 2%; }
+
+#textbox7 {width: 25%; margin-top: -3%;}/*수정사항*/
+
+#arrow {width: 10%; margin-top: 14.5%; float: left;}
+#arrow2 {width: 10%; margin-top: 14.5%; float: left;}
+#arrow3 {width: 10%; margin-top: 14.5%; float: left;}
+
+#logo {width: 100%; text-align: center; margin-left: 50%;}
+
+#texthover:hover {color: #042830; }
+
+.mouseDown {
+  font-size: 2em; 
+  border: 3px solid rgba(43,43,43,1);
+  display: block;
+  width: 1.6em;
+  height: 2.5em;
+  border-radius: 0.8em;
+  margin: 0 auto;
+  text-decoration: none;
+  transition: border 0.2s ease-out;
+  filter: blur(2.5px);
+}
+
+.mouseDown:hover {border: 4px solid rgba(0,0,0,0.7); filter: blur(0px);}
+
+.mouseDown span {
+  display: block;
+  background: #2b2b2b;
+  width: 0.2em;
+  height: 0.5em;
+  margin: 0.7em auto 0;
+  border-radius: 0.4em;
+}
+
+.mouseDown span {
+  animation-name: scroll;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.65, -0.55, 0.25, 1.5);
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.mouseDown:hover span {
+  animation-duration: 1.8s; filter: blur(0px);
+}
+
+
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 1;
+  }
+  20%{
+    transform: translateY(0) scaleY(1);
+  }
+  100% {
+    transform: translateY(1.2em) scaleY(0.8);
+    opacity: 0.01;
+  }
+}
+
+ /*p.typing-txt{display: none; position: absolute;}
+
+    .typing {  
+      position: absolute;
+      display: block; 
+      animation: cursor 7s ease-in-out forwards;
+    } 
+    @keyframes cursor{ 
+      0%{border-right: 1px solid #fff} 
+      50%{border-right: 1px solid #000} 
+      100%{border-right: 1px solid #fff} 
+    }
+
+    #name2 {width: 30px; height: 100px; position: absolute; background: white; opacity: 0; animation: slide_ 1.2s forwards}*/
+
+
+
+
+p,h1,h2,h3,h4,h5,h6,h9 {font-family: "source-han-serif-korean",serif; text-decoration: none;}
+
+    h1 {font-size: 40%; font-weight: 500; line-height: 5.2; text-align: left; color: white;}
+    h2 {font-size: 2em; font-weight: 700; text-align: center;}
+    h2:hover {text-decoration: none;}
+    h3 {font-size: 2.2em; font-weight: 500; text-align: left; line-height: 1.9; filter: blur(4px);}
+    h3:hover {filter: blur(0px);}
+    
+    h5 {font-size: 25px; font-weight: 300; text-align: center; line-height: 1.9;} /*문제*/
+    h6 {font-size: 25px; font-weight: 200; text-align: center; line-height: 1.9; filter: blur(2px);}
+    h6:hover {filter: blur(0px);} /*답변*/
+
+    h9 {font-size: 32px; font-weight: 600; text-align: left; line-height: 0; color: white; text-decoration: none; -webkit-text-stroke: 1.8px #042830;}
+    h9:hover {font-weight: 600; line-height: 0; color: #042830;}
+
+/*<div id="name2" style="width: "></div>
+
+    <h2 class="typing-txt" style="height: 400px;"> 현실(現實) : [현실] <br> 명사. 현재 실제로 존재하는 사실이나 상태.</h2>
+    <p class="typing" style="left:1200px; top: 40px;"></p>
+
+    <script> 
+      var typingBool = false; 
+      var typingIdx=0; 
+      var typingTxt = $(".typing-txt").text(); 
+      typingTxt=typingTxt.split("");  
+      if(typingBool==false){  
+         typingBool=true; 
+         
+         var tyInt = setInterval(typing,100); 
+       } 
+       
+       function typing(){ 
+         if(typingIdx<typingTxt.length){ 
+           $(".typing").append(typingTxt[typingIdx]); 
+           typingIdx++; 
+         } else{ 
+           clearInterval(tyInt); 
+         } 
+       }   
+    </script> 
+</style>
+</head>
+
+<body>
+
+    <section id="mousescroll">
+    <div style="margin-top: 26.5%;"> 
+      <a class="mouseDown" href="#section1" title="Scroll Down"><span></span>
+    </a>
+  
+    </section>
+
+    <section id="section1" style="margin-top: 20%;">  
+      <div id="textbox" >
+        <h2 style="color: #042830; ">INSTRUCTIONS</h2>
+      </div>
+
+      <div id="textbox2" style="width: 57%;">
+        <a class="textbox2" href="#section2" title="Scroll Down">
+        <h3 style="color: white; text-decoration: none; -webkit-text-stroke: 1.3px #042830;">1.<br><br>
+          현실(現實) : [현실]<br>
+          명사. 현재 실제로 존재하는 사실이나 상태.<br><br>
+          비현실(非現實) : [비ː현실]<br>
+          명사. 현재 실제로 존재하는 일이나 상태가 아닌 것.</h3>
+      
+      </div>
+    </section>
+
+    <section id="section2" style="height: 1080px;">
+
+      <div id="textbox" >
+        <h2 style="color: #042830;">INSTRUCTIONS</h2>
+      </div>
+
+      <div id="textbox2" style="width: 51%;"> 
+        <a class="textbox2" href="#section3" title="Scroll Down">
+        <h3 style="color: white; text-decoration: none; -webkit-text-stroke: 1.3px #042830;">2.<br><br>0000 : <br><br>현실의 해ː결불가한 고민을 <br>비ː현실적으로 해ː소시키는 웹사이트 서비스.
+      </h3>
+      </div>
+    </section>
+
+    <section id="section3" >
+      <div id="textbox" >
+        <h2 style="color: #042830;">INSTRUCTIONS</h2>
+      </div>
+
+      <div id="textbox3" style="width: 80%;"> <a class="textbox3" href="#section4" title="Scroll Down">
+        <h3 style="color: white; text-decoration: none; -webkit-text-stroke: 1.3px #042830;">3.<br><br>저희 웹사이트에서는 당신 일상의 고민을 들어주며 <br>비현실적인 해소방법을 제공하는 사이트입니다.<br><br><b>현실에서는 해결할 수 없는 고민과 스트레스를 이 웹사이트에 접수해주세요.</b>
+      </h3>
+      </div>
+    </section>
+
+    <section id="section4">
+
+      <div id="textbox4"> 
+        <a class="textbox4" href="#section4" title="Scroll Down">
+          <div id="logo" style="margin-top: 55%;">
+          <img src="./img/logo.png">
+          </div>
+      </div>
+
+      <div id="arrowall" style="width: 100%; margin-top: -2%;">
+      <div id="arrow" style="margin-left: 14%;"> <a class="arrow" href="#section1" title="back">
+        <img src="./img/arrow.png" style="width: 20%; transform: rotateZ(90deg);">
+      </div>
+
+      <div id="arrow2" style="margin-left: 21%; margin-top: 12%;"> <a class="arrow2" href="#section5" title="back">
+        <img src="./img/arrow.png" style="width: 20%;">
+      </div>
+
+      <div id="arrow3" style="margin-left: 21%;">
+        <img src="./img/arrow.png" style="width: 20%; transform: rotateZ(-90deg);">
+      </div>
+      </div>
+     
+    </section>
+
+    <section id="section5">
+      <div style="margin-left: 10%;">
+      <div id="textbox" style="position: relative; height: 10%; margin-top: -2%;">
+        <h2 style="color: #042830; float: left; font-size: 4em;">(1)</h2>
+      </div>
+      </div>
+
+      <div style="position: relative;">
+      <div id="textbox5" style="float: left; width: 60%; margin-left: 20%; margin-right: 20%; margin-top: 5%;">
+        <h5 style="color: #042830;"><center>현재 당신에게<br>불편함이 있으신가요?<br><br></center>
+      </h5>
+      </div>
+
+      <div id="right" style="position: relative;">
+      <div id="textbox7" style="margin-left: 72%;">
+        <h6 style="color: #042830;">정말 인생을 살아가면서<br>불편함이 없으셨나요?
+      </h6>
+      </div>
+      </div>
+
+      <div style="position: relative;">
+      <div id="textbox6" class="yes1" style="float: left; margin-left: 40%;"> <a class="yes1" href="#section6" title="scrolldown">
+        <h6 style="color: #042830;">
+          YES
+      </h6>
+      </div>
+
+      <div id="textbox6" class="no1" style="float: left;">
+        <a class="no1" href="#section6" title="scrolldown">
+        <h6 style="color: #042830;">NO
+      </h6>
+      </div>
+      </div>
+
+    </section>
+
+    <section id="section6">
+      <div style="margin-left: 10%;">
+      <div id="textbox" style="position: relative; height: 10%; margin-top: -2%;">
+        <h2 style="color: #042830; float: left; font-size: 4em;">(2)</h2>
+      </div>
+      </div>
+
+      <div style="position: relative;">
+      <div id="textbox5" style="float: left; width: 60%; margin-left: 20%; margin-right: 20%; margin-top: 5%;">
+        <h5 style="color: #042830; line-height: 0;"><center>그 불편함을 누군가에게 털어놓은 적 있나요?<br><br><h5 style="color: white; line-height: 0;">.</h5></center>
+      </h5>
+      </div>
+
+      <div style="position: relative;">
+      <div id="textbox6" class="yes1" style="float: left; margin-left: 40%; margin-top: 13.5%;"> <a class="yes1" href="#section7" title="scrolldown">
+        <h6 style="color: #042830;">
+          YES
+      </h6>
+      </div>
+
+      <div id="textbox6" class="no1" style="float: left; margin-top: 13.5%;">
+        <a class="no1" href="#section7" title="scrolldown">
+        <h6 style="color: #042830;">NO
+      </h6>
+      </div>
+      </div>
+      
+    </section>
+
+    <section id="section7">
+      <div style="margin-left: 10%;">
+      <div id="textbox" style="position: relative; height: 10%; margin-top: -2%;">
+        <h2 style="color: #042830; float: left; font-size: 4em;">(3)</h2>
+      </div>
+      </div>
+
+      <div style="position: relative;">
+      <div id="textbox5" style="float: left; width: 60%; margin-left: 20%; margin-right: 20%; margin-top: 5%;">
+        <h5 style="color: #042830; line-height: 0;"><center>그 불편이 해소되었나요?<br><br><h5 style="color: white; line-height: 0;">.</h5></center>
+      </h5>
+      </div>
+
+      <div style="position: relative;">
+      <div id="textbox6" class="yes1" style="float: left; margin-left: 40%; margin-top: 13.5%;"> <a class="yes1" href="#section8" title="scrolldown">
+        <h6 style="color: #042830;">
+          YES
+      </h6>
+      </div>
+
+      <div id="textbox6" class="no1" style="float: left; margin-top: 13.5%;">
+        <a class="no1" href="#section8" title="scrolldown">
+        <h6 style="color: #042830;">NO
+      </h6>
+      </div>
+      </div>
+      
+    </section>
+
+    <section id="section8">
+      <div style="margin-left: 10%;">
+      <div id="textbox" style="position: relative; height: 10%; margin-top: -2%;">
+        <h2 style="color: #042830; float: left; font-size: 4em;">(4)</h2>
+      </div>
+      </div>
+
+      <div style="position: relative;">
+      <div id="textbox5" style="float: left; width: 60%; margin-left: 20%; margin-right: 20%; margin-top: 5%;">
+        <h5 style="color: #042830; line-height: 0;"><center>그것은 해소되지 못 할 불편함인가요?<br><br><h5 style="color: white; line-height: 0;">.</h5></center>
+      </h5>
+      </div>
+
+      <div style="position: relative;">
+      <div id="textbox6" class="yes1" style="float: left; margin-left: 40%; margin-top: 13.5%;"> <a class="yes1" href="#section9" title="4">
+        <h6 style="color: #042830;">
+          YES
+      </h6>
+      </div>
+
+      <div id="textbox6" class="no1" style="float: left; margin-top: 13.5%;">
+        <a class="no1" href="#section9" title="4">
+        <h6 style="color: #042830;">NO
+      </h6>
+      </div>
+      </div>
+
+      <section id="section9">
+      <div style="margin-left: 10%;">
+      <div id="textbox" style="position: relative; height: 10%; margin-top: -2%;">
+        <h2 style="color: #042830; float: left; font-size: 4em;">(5)</h2>
+      </div>
+      </div>
+
+      <div style="position: relative;">
+      <div id="textbox5" style="float: left; width: 60%; margin-left: 20%; margin-right: 20%; margin-top: 0%;">
+        <h5 style="color: #042830;"><center>저희 사이트에 당신의 불편함을 제보해주시면<br>그 해결되지 못 할 고민들을<br>현실에는 없는 물건들로 해소시켜드립니다. <br><br>접수하시겠습니까?<br><br><h5 style="color: white; line-height: 0;">.</h5></center>
+      </h5>
+      </div>
+
+      <div style="position: relative;">
+      <div id="textbox6" class="yes1" style="float: left; margin-left: 40%; margin-top: -2.5%;"> <a class="yes1" href="#section10" title="scrolldown">
+        <h6 style="color: #042830;">
+          YES
+      </h6>
+      </div>
+
+      <div id="textbox6" class="no1" style="float: left; margin-top: -2.5%;">
+        <a class="no1" href="#section10" title="scrolldown">
+        <h6 style="color: #042830;">NO
+      </h6>
+      </div>
+      </div>
+
+    </section>
+
+    <section id="section10">
+      <div style="margin-left: 10%;">
+      <div id="textbox" style="position: relative; height: 10%; margin-top: -2%;">
+        <h2 style="color: #042830; float: left; font-size: 4em;">(_)</h2>
+      </div>
+      </div>
+
+      <div style="position: relative;">
+      <div id="textbox6" class="yes1" style="float: left; margin-left: 40%; margin-top: 2%;"> <a class="yes1" href="#section10" title="scrolldown">
+        <h6 style="color: #042830;">
+          불편 접수
+      </h6>
+      </div>
+
+      <div id="textbox6" class="no1" style="float: left; margin-top: 20%;">
+        <a class="no1" href="#section10" title="scrolldown">
+        <h6 style="color: #042830;">불편 목록
+      </h6>
+      </div>
+      </div>
+
+    </section>
+  
+
+  <script type="text/javascript">
+    
+    var toggle = "off";
+
+        textbox3.onclick = function(){
+            if(toggle == "off"){
+              toggle = "on";
+        document.section4.style.background = "black";
+            } 
+        }
+
+  </script>
+
+  
+</body>
+</html>

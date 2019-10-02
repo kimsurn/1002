@@ -133,7 +133,7 @@ a{cursor: url(./img/cursor2.png) 12 12, auto;}
 
 /*window*/
 #wind{width: 95%; height: 67.5%; position: fixed; left: 2.5%; top: 20%; background-size: 77%;}
-#bigwind{width: 76.9%; height: 100%; float: left; border-radius: 25px; border: 2px solid #042830; overflow: scroll; background: url('./img/detail1.png');}
+#bigwind{width: 76.9%; height: 100%; float: left; border-radius: 25px; border: 2px solid #042830; overflow: scroll;}
 #smallwind{width: 22.5%; height: 100%; float: left; border-radius: 25px; border: 2px solid #042830;}
 
 #windtitle1 {width: 73.1%; height: 6%; position: fixed; border-radius: 25px 25px 0px 0px; border: 2px solid #042830; background: white; z-index: 999;}
@@ -188,12 +188,12 @@ h8 {font-size: 3em; font-weight: 800; color: #042830; text-align: left; letter-s
 h9 {font-size: 1.8em; font-weight: 600; color: #042830; text-align: left; line-height: 1.7;}
 
 
-
+/*<div id="flag"></div>*/
 </style>
 </head>
 <body>
 
-<div id="flag">
+
 
   <img src="./img/flag.png" style="width: 100%; z-index: 900;">
   <div style="margin-top: 30%; z-index: 999;">
@@ -281,6 +281,8 @@ h9 {font-size: 1.8em; font-weight: 600; color: #042830; text-align: left; line-h
     </div>
 
     <div id="bigwind" style="position: relative;">
+
+      <div><img src="./img/detail1.png"></div>
       
       <div id="topbtn" style="background:#042830; ">
         <a href="detail.html"><img src="./img/show.png"></a>
